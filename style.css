@@ -1,0 +1,99 @@
+body {
+  font-family: "Libre Baskerville", serif;
+  scroll-behavior: smooth;
+}
+
+/* HERO */
+#hero {
+  height: 100vh;
+  background: url("hero_final.jpeg") center/cover no-repeat fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 1.8s ease, transform 3s ease;
+}
+#hero.active-hero {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(57,88,134,0.85), rgba(57,88,134,0.35));
+}
+
+.title-script {
+  font-family: "Pinyon Script", cursive;
+  font-size: 4rem;
+  color: #F0F3FA;
+}
+
+.sub-text { font-size: 1.4rem; color: #E9EEF6; }
+.date-text { opacity: .8; }
+
+.btn-hero {
+  background: #638ECB;
+  color: #F0F3FA;
+  border-radius: 50px;
+  padding: 12px 28px;
+  transition: .3s;
+}
+.btn-hero:hover { background: #395886; }
+
+/* NAVBAR */
+.navbar {
+  background: rgba(57,88,134,0.45) !important;
+  backdrop-filter: blur(8px);
+  transition: .6s ease;
+}
+.navbar-brand, .nav-link { color: #F0F3FA !important; }
+.nav-link:hover { color: #B1C9EF !important; }
+
+/* SECTIONS */
+.section { padding: 90px 0; }
+.section.alt { background: #F0F3FA; }
+.section-title { color: #395886; font-weight: 700; }
+
+/* PANTALLA INICIO */
+#start-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, #395886, #638ECB);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+#start-overlay.fade-out { animation: fadeOutOverlay 1s forwards ease; }
+@keyframes fadeOutOverlay { to { opacity: 0; visibility: hidden; } }
+
+/* Música button */
+.music-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #395886;
+  border-radius: 50%;
+  padding: 12px;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 1500;
+}
+
+/* Animaciones reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1.2s ease, transform 1.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
