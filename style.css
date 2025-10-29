@@ -1,0 +1,136 @@
+/* ============ Tema Negro + Dorado (T3) ============ */
+:root{
+  --bg-1:#0b0b0d;      /* negro profundo */
+  --bg-2:#121216;      /* gris/negro suave */
+  --text:#e6e6e6;
+  --muted:#a5a5a8;
+  --gold:#d4af37;      /* dorado clásico */
+  --gold-soft:#e3c766;
+  --shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+
+html,body{
+  background: var(--bg-1);
+  color: var(--text);
+  font-family: 'Libre Baskerville', serif;
+  scroll-behavior: smooth;
+}
+
+.section-title{
+  font-weight: 700;
+  letter-spacing: .02em;
+  margin-bottom: .25rem;
+}
+
+.title-script{
+  font-family: "Pinyon Script", cursive;
+  letter-spacing: .02em;
+}
+
+.tracking{ letter-spacing: .25em; }
+
+.bg-dark-2{ background: var(--bg-2); }
+
+/* Navbar vidrio */
+.glassy-nav{
+  background: rgba(12,12,14,.55);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212,175,55,.15);
+}
+.nav-link{ color: var(--text) !important; opacity:.9; }
+.nav-link:hover{ color: var(--gold) !important; }
+.brand-mark{ color: var(--gold); letter-spacing:.15em; }
+
+/* Botón dorado */
+.btn-gold{
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+  color: #1a1a1a;
+  border: none;
+  box-shadow: var(--shadow);
+}
+.btn-gold:hover{
+  filter: brightness(1.05);
+  color: #000;
+}
+
+/* Tarjetas terciopelo */
+.card-velvet{
+  background: radial-gradient(120% 120% at 50% 0%, #1a1a1d 0%, #0f0f12 100%);
+  border: 1px solid rgba(212,175,55,.15);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+/* HERO */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  isolation: isolate;
+  background: #000;
+}
+.hero-overlay{
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.55) 100%);
+  z-index: 1;
+}
+.hero-parallax{
+  position: absolute; inset: -10%;
+  background-image: url('foto1.jpg'); /* cambia por tu imagen */
+  background-size: cover; background-position: center;
+  transform: translateY(0);
+  will-change: transform;
+  z-index: 0;
+  filter: saturate(1.05) contrast(1.05) brightness(.85);
+}
+
+/* Countdown */
+.countdown .unit{
+  min-width: 90px;
+  padding: .85rem .5rem;
+  border-radius: .75rem;
+  border: 1px solid rgba(212,175,55,.2);
+  background: #0e0e12;
+  box-shadow: var(--shadow);
+}
+.countdown .number{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.countdown .label{
+  font-size: .8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+/* Música FAB */
+.music-fab{
+  position: fixed;
+  right: 1rem; bottom: 1rem;
+  z-index: 999;
+  border-radius: 999px;
+  padding: .75rem 1rem;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(212,175,55,.35) !important;
+  box-shadow: var(--shadow);
+}
+
+/* Animaciones al aparecer */
+.reveal{ opacity: 0; transform: translateY(16px); }
+.reveal.visible{ opacity: 1; transform: none; transition: all .8s ease; }
+
+/* Utilidades */
+.text-gold{ color: var(--gold); }
+footer{ background: #0e0e12; border-top: 1px solid rgba(212,175,55,.15); }
+
+/* Accesibilidad foco */
+:focus-visible{
+  outline: 2px dashed var(--gold);
+  outline-offset: 3px;
+}
